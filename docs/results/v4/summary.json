@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-03",
+  "scope": "tiny native Qwen conversion and engineering checks, not pretrained FineWeb quality",
+  "cpu_integration_cases": {
+    "transformers_4_51_3": 10,
+    "transformers_5_15_0": 10
+  },
+  "additional_parquet_case": 1,
+  "cuda_fla_cases_transformers_5_15_0": 1,
+  "uninterrupted_vs_resumed_weights_exact_both_versions": true,
+  "full_pretrained_qwen_fineweb_training_run": false,
+  "multi_gpu_deepspeed_run": false,
+  "source_sha256": {
+    "src/gpa/hf_qwen.py": "f7f835e9986271be93c6b70e1a643358be29c4dc862dfcebd43447a6a8363f84",
+    "src/gpa/finetune.py": "96ed7c11725e94f074b60724c92e220466803278489341d5976e5cdf1f546a29",
+    "scripts/train_gpa_fineweb.py": "3ca5f91bb9b1daabbe7cc0c4514e35b211f34d201cca026d9faad0af8ab142df",
+    "scripts/convert_qwen_to_gpa.py": "90ec49aa0fe05b55b99e4255bb3b8a093224eabd58c897cc86c88824d830c24b",
+    "scripts/smoke_qwen_conversion.py": "0253f1bb4f09c25f619ed325d148e30086527cdb8092e6fe23cd9324e5c624a9"
+  }
+}

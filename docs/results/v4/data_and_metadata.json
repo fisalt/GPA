@@ -1,0 +1,6 @@
+{
+  "parquet_stream_test": true,
+  "full_checkpoint_metadata_written": true,
+  "resumed_step": 3,
+  "status": "PASS"
+}

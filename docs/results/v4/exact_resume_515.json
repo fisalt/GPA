@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "source": "random tiny Qwen3",
+  "training_data": "local text fixture",
+  "conversion": true,
+  "full_lora_checkpoint": true,
+  "resume_global_step": 3,
+  "resume_matches_uninterrupted_exactly": true,
+  "merged_auto_map_reload": true,
+  "use_cache_generation": true,
+  "generated_length": 5,
+  "real_fineweb_quality_claim": false
+}

@@ -10,7 +10,7 @@ def main():
     root = Path(__file__).resolve().parents[1]
     top = ["pyproject.toml", "README.md", "README.zh-CN.md", "CITATION.cff", ".gitignore"]
     files = [root / name for name in top if (root / name).is_file()]
-    for directory in ("src", "tests", "examples", "scripts", "docs"):
+    for directory in ("src", "tests", "examples", "scripts", "docs", "ds_configs"):
         files.extend(p for p in (root/directory).rglob("*")
                      if p.is_file() and (p.suffix in (".py", ".sh", ".md", ".json")
                                          or (directory == "docs" and p.suffix == ".png"))

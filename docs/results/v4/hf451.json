@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "torch": "2.9.0+cu128",
+  "transformers": "4.51.3",
+  "cpu_tests_passed": true,
+  "cli_conversion_training_resume_merge": true,
+  "cuda_test_passed": false,
+  "real_fineweb_quality_claim": false
+}

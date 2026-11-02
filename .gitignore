@@ -9,4 +9,6 @@ dist/
 *.pth
 *.safetensors
 .validation/
+runs/
+logs/
 

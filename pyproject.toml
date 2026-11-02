@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gpa-attention"
-version = "0.3.0"
+version = "0.4.0"
 description = "Counted KV GPA, dense paired relation memory, and auditable proposition references"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -13,6 +13,8 @@ dependencies = ["torch>=2.0"]
 [project.optional-dependencies]
 test = ["pytest>=7"]
 cuda = ["flash-linear-attention>=0.2"]
+hf = ["torch>=2.6", "transformers>=4.51,<6", "accelerate>=1.2", "datasets>=3", "safetensors>=0.4"]
+deepspeed = ["deepspeed>=0.16; platform_system == 'Linux'"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

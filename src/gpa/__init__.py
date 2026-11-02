@@ -6,4 +6,4 @@ from .features import QuadraticFeatures
 
 __all__ = ["DenseGPA", "GPAConfig", "GPAState", "LevelState", "RelationState",
            "TwoStageState", "two_stage_gdn", "PaperDenseGPA", "PaperConfig", "PaperState", "QuadraticFeatures"]
-__version__ = "0.3.0"
+__version__ = "0.4.0"

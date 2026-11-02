@@ -274,4 +274,4 @@ python scripts/plot_diagnostics.py diagnostics_cpu.arrays.json --output diagnost
 从 scratch 复现需保持相同版本/种子、20k步、B8、LR .002 余弦降至 .0002、
 warmup100、clip1、每1000步切换一次 T64/1→T128/2→T128/4→T256/8 课程。
 本次训练已全部结束；没有遗留无限训练任务，也没有停止其他 Qwen/RSA 作业。
-发布包不含权重、数据、依赖源码或论文文件，尚未上传 GitHub。
+发布包不含权重、数据、依赖源码或论文文件；v0.3 源码随后已公开在 fisalt/GPA。

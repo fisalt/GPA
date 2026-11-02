@@ -1,5 +1,21 @@
 # GPA: five proposition references and dense multilevel gated-delta attention
 
+**v0.4: Qwen2.5/Qwen3 → all-GPA conversion and FineWeb adaptation.** Reuse the
+pretrained projections/MLP/embeddings/norms, train GPA plus native LoRA, and save
+complete HF checkpoints with `auto_map`, recurrent generation and merged export.
+See the [conversion/training guide](docs/QWEN_CONVERSION.md) and
+[HF4/HF5 validation](docs/VALIDATION_V4.md). This addition does
+not claim that converted large Qwen models already reproduce the tiny-model
+retrieval results below.
+
+```bash
+python -m pip install -e '.[hf,cuda]'
+# CUDA also needs a compatible Flash Linear Attention installation.
+python scripts/convert_qwen_to_gpa.py --model Qwen/Qwen3-0.6B --output runs/qwen3_gpa_base
+python scripts/train_gpa_fineweb.py --model runs/qwen3_gpa_base --output runs/qwen3_gpa_fineweb \
+  --data-files '/path/to/fineweb/*.parquet' --length 8192 --lr 1e-4
+```
+
 Version 0.3 adds **updated paired GDN storage and fully dense compatibility-product reading**,
 plus an explicit counted-KV alternative (`PaperDenseGPA`). Storage is informed
 by the latest RSA controls/relations, without its adjacent/rank32 sparse reader. All
@@ -252,7 +268,7 @@ capture must be excluded from steady-state timing and reported separately.
 python scripts/build_release.py
 ```
 
-Produces `dist/gpa-attention-0.3.0-source.zip` with a per-file SHA256 manifest
+Produces `dist/gpa-attention-0.4.0-source.zip` with a per-file SHA256 manifest
 and archive checksum. It excludes checkpoints, data, the manuscript, machine
 addresses, private logs, environments, and dependency source. See
 [RELEASE.md](docs/RELEASE.md) for uploading to `fisalt/GPA`. A license must be

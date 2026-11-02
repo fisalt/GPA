@@ -1,5 +1,10 @@
 # GPA 代码整理版
 
+**v0.4 新增 Qwen2.5／Qwen3 全层转换为 GPA，以及 FineWeb 适配训练。**
+支持继承原投影/MLP/Embedding/Norm、原生 LoRA、完整 checkpoint、恢复训练、合并导出，
+以及带状态/短卷积缓存的 `auto_map` 生成。见[转换与训练说明](docs/QWEN_CONVERSION.md)。
+本轮不把下面 tiny 模型的检索成绩当作转换后 Qwen 大模型的成绩。
+
 v0.3 更新两阶段 GDN 的 decay/control、配对关系写入及**全连接兼容度乘积读取**，
 另外实现衰减计数 KV 备选模型 `PaperDenseGPA`。不采用 RSA 的相邻/R32 稀疏读取。旧版与原始结果保留。
 公式、来源与新对照实验见 [v0.3 说明](docs/DENSE_V3.md)。

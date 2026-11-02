@@ -1,6 +1,8 @@
 # Author release checklist
 
-This bundle is prepared for **owner upload**, not automatically published.
+Source is published at the repository below. This guide describes subsequent
+owner uploads and optional GitHub Release attachments; no release/tag is
+created automatically by the build script.
 The repository referenced by the manuscript is https://github.com/fisalt/GPA.
 GitHub Release attachment publication is a separate action from creating a
 source archive. No repository token or other credential is included.
@@ -44,7 +46,7 @@ the counted alternative's poor results must remain visible.
    If the repo is no longer empty, clone and integrate instead of force-pushing.
 
 6. GitHub → Releases → Draft a new release → choose a reviewed tag (for example
-   `v0.3.0`). Attach the ZIP and its `.sha256` file. Summarize the five reference
+   `v0.4.0`). Attach the ZIP and its `.sha256` file. Summarize the five reference
    modules, dense GDN implementation, actual validation, and approximation caveats.
    Publish only after the authors' review. No paper PDF/data/weights are in the ZIP.
 
