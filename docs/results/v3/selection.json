@@ -1,0 +1,128 @@
+{
+  "selected": "paired_temporal_v3",
+  "control": "control_rope_v3",
+  "worst_task": 0.90625,
+  "worst_margin": -0.078125,
+  "scores": {
+    "single": 1.0,
+    "uuid4": 0.90625,
+    "mqar": 1.0,
+    "overwrite": 1.0
+  },
+  "validation_seed": 900000,
+  "heldout_seed": 920000,
+  "validation_target_met": false,
+  "candidates": {
+    "paired_product_v3": {
+      "control": "control_rope_v3",
+      "worst_task": 0.5625,
+      "worst_margin": -0.421875,
+      "scores": {
+        "single": 0.96875,
+        "uuid4": 0.5625,
+        "mqar": 0.9739583333333334,
+        "overwrite": 0.953125
+      }
+    },
+    "paired_balanced_v3": {
+      "control": "control_rope_v3",
+      "worst_task": 0.5859375,
+      "worst_margin": -0.3984375,
+      "scores": {
+        "single": 0.984375,
+        "uuid4": 0.5859375,
+        "mqar": 0.9921875,
+        "overwrite": 0.984375
+      }
+    },
+    "paired_context_v3": {
+      "control": "control_rope_v3",
+      "worst_task": 0.6640625,
+      "worst_margin": -0.3203125,
+      "scores": {
+        "single": 1.0,
+        "uuid4": 0.6640625,
+        "mqar": 0.9973958333333334,
+        "overwrite": 0.9921875
+      }
+    },
+    "paired_marginal_v3": {
+      "control": "control_rope_v3",
+      "worst_task": 0.625,
+      "worst_margin": -0.359375,
+      "scores": {
+        "single": 0.9609375,
+        "uuid4": 0.625,
+        "mqar": 0.9713541666666666,
+        "overwrite": 1.0
+      }
+    },
+    "paired_quadratic_v3": {
+      "control": "control_rope_v3",
+      "worst_task": 0.7421875,
+      "worst_margin": -0.2421875,
+      "scores": {
+        "single": 1.0,
+        "uuid4": 0.7421875,
+        "mqar": 0.9921875,
+        "overwrite": 0.984375
+      }
+    },
+    "paired_scaled_v3": {
+      "control": "control_scaled_v3",
+      "worst_task": 0.625,
+      "worst_margin": -0.359375,
+      "scores": {
+        "single": 1.0,
+        "uuid4": 0.625,
+        "mqar": 0.9869791666666666,
+        "overwrite": 1.0
+      }
+    },
+    "paired_readgate_v3": {
+      "control": "control_rope_v3",
+      "worst_task": 0.640625,
+      "worst_margin": -0.34375,
+      "scores": {
+        "single": 1.0,
+        "uuid4": 0.640625,
+        "mqar": 0.9973958333333334,
+        "overwrite": 0.9921875
+      }
+    },
+    "paired_temporal_v3": {
+      "control": "control_rope_v3",
+      "worst_task": 0.90625,
+      "worst_margin": -0.078125,
+      "scores": {
+        "single": 1.0,
+        "uuid4": 0.90625,
+        "mqar": 1.0,
+        "overwrite": 1.0
+      }
+    },
+    "paired_widekey_v3": {
+      "control": "control_widekey_v3",
+      "worst_task": 0.828125,
+      "worst_margin": -0.171875,
+      "scores": {
+        "single": 1.0,
+        "uuid4": 0.828125,
+        "mqar": 1.0,
+        "overwrite": 1.0
+      }
+    },
+    "paired_dense4_v3": {
+      "control": "control_rope_v3",
+      "worst_task": 0.7578125,
+      "worst_margin": -0.2265625,
+      "scores": {
+        "single": 1.0,
+        "uuid4": 0.7578125,
+        "mqar": 0.9947916666666666,
+        "overwrite": 1.0
+      }
+    }
+  },
+  "note": "Validation point-estimate target only, not a statistical equivalence claim"
+}

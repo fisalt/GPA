@@ -1,0 +1,21 @@
+{
+  "python": "3.11.13",
+  "torch": "2.9.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "gpa": "0.3.0",
+  "source_sha256": {
+    "attention.py": "831230ce8c9e15fa9f6218394f5f782e6f7f7452846a72bdc449dba1ee19122c",
+    "ops.py": "c09987ee79f6fe6e9330abfb46380c95d37302300986c49388c1b6f4d3bc08e2",
+    "packed.py": "611030d2e702c90e78946fafde5c6f91b195fc9e5d61a8ddd7090295a812aceb",
+    "staged.py": "9fedff4bd513fbc60ed11efc7034e2459083e853ffb27f4d1e7f90570c4992be",
+    "features.py": "622ff7d45bc4047bf0c04e0b4ebcb5a8912c7185244f04b643d8b8b4fb7d095a",
+    "retrieval.py": "6e879377e9f0fdfc9c31c7237109ac70afe22afc19ea8a9868cdc5d8d7a47d0d",
+    "triton_route.py": "7b40a79667b71dfffbb49439bfe348877785c9b9e65140321838dbe7b3d4493b",
+    "training_graph.py": "3978686a725ee166b0be07b44c7f44396d7570e6ccf5ffd1198b7cf3970a5142"
+  },
+  "triton": "3.5.0",
+  "flash-linear-attention": "0.3.2",
+  "pytest": "8.4.2",
+  "fla_public_chunk_sha256": "728856315595e9004cd7749ae07d7e8c282999e74b8060b1ac4f7239fe1dfa51"
+}

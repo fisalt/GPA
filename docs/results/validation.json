@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-24",
+  "version": "0.2.0",
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "torch_gpu": "2.9.0+cu128",
+  "triton": "3.5.0",
+  "gpu_full_suite": {"passed": 58, "skipped": 0, "warnings": 10, "seconds": 215.15},
+  "cpu_suite": {"passed": 46, "skipped_gpu_only": 12, "seconds": 12.36},
+  "note": "The CPU and GPU results are separate runs of overlapping tests. Warnings are FLA short-remainder packed-head layout heuristics."
+}

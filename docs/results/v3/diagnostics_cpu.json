@@ -1,0 +1,171 @@
+{
+  "layer_0": {
+    "route_entropy_mean": 2.3791353702545166,
+    "route_max_mean": 0.33718594908714294,
+    "direct_to_route_query_norm_ratio_before_balance": [
+      15.706584930419922,
+      12.209929466247559
+    ],
+    "learned_route_branch_fraction": [
+      [
+        0.4023904800415039,
+        0.30865803360939026,
+        0.2110362946987152,
+        0.17132452130317688
+      ],
+      [
+        0.4982340335845947,
+        0.276154100894928,
+        0.1811181902885437,
+        0.6755285859107971
+      ]
+    ],
+    "quadratic_gain": [
+      0.29026299715042114,
+      0.3599942624568939,
+      0.5589848756790161,
+      0.5069835782051086
+    ],
+    "control_statistics_level": 0,
+    "inner_beta_by_observed_token_type": {
+      "noise": 0.5527770519256592,
+      "values": 0.5265815258026123,
+      "keys": 0.5159714818000793,
+      "markers": 0.41615280508995056,
+      "answer_prediction_positions": 0.3934497833251953,
+      "record_values": 0.5491566061973572,
+      "generated_or_teacher_answer_values": 0.34598132967948914,
+      "read_phase": 0.4205569922924042,
+      "storage_phase": 0.5362449288368225
+    },
+    "outer_beta_by_observed_token_type": {
+      "noise": 0.04810551181435585,
+      "values": 0.23718030750751495,
+      "keys": 0.06589538604021072,
+      "markers": 0.09487958252429962,
+      "answer_prediction_positions": 0.04994936287403107,
+      "record_values": 0.2639431357383728,
+      "generated_or_teacher_answer_values": 0.02307780645787716,
+      "read_phase": 0.05173199623823166,
+      "storage_phase": 0.08162979781627655
+    },
+    "inner_log_decay_by_observed_token_type": {
+      "noise": -0.0007660783594474196,
+      "values": -0.00068620964884758,
+      "keys": -0.000565983762498945,
+      "markers": -0.001938464818522334,
+      "answer_prediction_positions": -0.001566148130223155,
+      "record_values": -0.0005597482086159289,
+      "generated_or_teacher_answer_values": -0.0016979016363620758,
+      "read_phase": -0.0013102996163070202,
+      "storage_phase": -0.0008453174959868193
+    },
+    "outer_log_decay_by_observed_token_type": {
+      "noise": -0.00033199775498360395,
+      "values": -0.001783666666597128,
+      "keys": -0.0003376590320840478,
+      "markers": -0.00032057991484180093,
+      "answer_prediction_positions": -0.012977474369108677,
+      "record_values": -0.000350525660905987,
+      "generated_or_teacher_answer_values": -0.013248794712126255,
+      "read_phase": -0.00673579890280962,
+      "storage_phase": -0.00033536352566443384
+    },
+    "relation_effective_rank_mean": 17.835577964782715,
+    "relation_top_singular_mass_mean": 0.196896031498909,
+    "count_peak_fraction": [
+      0.7908994555473328,
+      0.4873389005661011
+    ]
+  },
+  "layer_1": {
+    "route_entropy_mean": 2.3579928874969482,
+    "route_max_mean": 0.4105333089828491,
+    "direct_to_route_query_norm_ratio_before_balance": [
+      25.622472763061523,
+      20.122875213623047
+    ],
+    "learned_route_branch_fraction": [
+      [
+        0.5341694951057434,
+        0.5177354216575623,
+        0.5407595634460449,
+        0.49615031480789185
+      ],
+      [
+        0.5366231799125671,
+        0.5062770843505859,
+        0.5704985857009888,
+        0.5020462870597839
+      ]
+    ],
+    "quadratic_gain": [
+      0.29251828789711,
+      0.3411411643028259,
+      0.3292626142501831,
+      0.2933075726032257
+    ],
+    "control_statistics_level": 0,
+    "inner_beta_by_observed_token_type": {
+      "noise": 0.624497652053833,
+      "values": 0.6251790523529053,
+      "keys": 0.6252444386482239,
+      "markers": 0.6255202889442444,
+      "answer_prediction_positions": 0.6267787218093872,
+      "record_values": 0.6254394054412842,
+      "generated_or_teacher_answer_values": 0.623095691204071,
+      "read_phase": 0.6293311715126038,
+      "storage_phase": 0.6246020197868347
+    },
+    "outer_beta_by_observed_token_type": {
+      "noise": 0.002973809139803052,
+      "values": 0.002762671560049057,
+      "keys": 0.005980541929602623,
+      "markers": 0.004872444551438093,
+      "answer_prediction_positions": 0.0016546302940696478,
+      "record_values": 0.0028583607636392117,
+      "generated_or_teacher_answer_values": 0.0019971542060375214,
+      "read_phase": 0.0016526945400983095,
+      "storage_phase": 0.003403057809919119
+    },
+    "inner_log_decay_by_observed_token_type": {
+      "noise": -3.5286844649817795e-05,
+      "values": -3.224489773856476e-05,
+      "keys": -3.3413194614695385e-05,
+      "markers": -3.569407999748364e-05,
+      "answer_prediction_positions": -3.959775131079368e-05,
+      "record_values": -3.078559893765487e-05,
+      "generated_or_teacher_answer_values": -4.3919273593928665e-05,
+      "read_phase": -3.993519931100309e-05,
+      "storage_phase": -3.4602027881192043e-05
+    },
+    "outer_log_decay_by_observed_token_type": {
+      "noise": -3.0616776943206787,
+      "values": -2.7565948963165283,
+      "keys": -2.946974992752075,
+      "markers": -2.896345853805542,
+      "answer_prediction_positions": -2.440532922744751,
+      "record_values": -2.8162424564361572,
+      "generated_or_teacher_answer_values": -2.2794156074523926,
+      "read_phase": -2.481271266937256,
+      "storage_phase": -3.01045560836792
+    },
+    "relation_effective_rank_mean": 12.441869258880615,
+    "relation_top_singular_mass_mean": 0.3048321157693863,
+    "count_peak_fraction": [
+      0.7817254662513733,
+      0.31934231519699097
+    ]
+  },
+  "answer_token_accuracy_on_diagnostic_batch": 1.0,
+  "protocol": {
+    "data_version": 3,
+    "task": "uuid4",
+    "device": "cpu",
+    "dtype": "float32_reference",
+    "seed": 901111,
+    "note": "token-type masks are analysis only; never passed to model"
+  },
+  "no_relation_read_answer_token_accuracy": 1.0,
+  "answer_predictions_changed_without_relation_read": 0.0
+}

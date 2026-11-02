@@ -1,0 +1,51 @@
+{
+  "layer_0": {
+    "inner_beta_by_observed_token_type": {
+      "noise": 0.5947976112365723,
+      "values": 0.5992636680603027,
+      "keys": 0.5948101282119751,
+      "markers": 0.5958262085914612,
+      "answer_prediction_positions": 0.5975348353385925
+    },
+    "outer_beta_by_observed_token_type": {
+      "noise": 0.5870835781097412,
+      "values": 0.6043290495872498,
+      "keys": 0.5870295763015747,
+      "markers": 0.5883744955062866,
+      "answer_prediction_positions": 0.5979920625686646
+    },
+    "relation_effective_rank_mean": 10.12907632191976,
+    "relation_top_singular_mass_mean": 0.2404367389778296,
+    "count_peak_fraction": [
+      0.11626221984624863,
+      0.13611915707588196,
+      0.09657962620258331,
+      0.10343199223279953
+    ]
+  },
+  "layer_1": {
+    "inner_beta_by_observed_token_type": {
+      "noise": 0.5988897085189819,
+      "values": 0.5986155867576599,
+      "keys": 0.5989142060279846,
+      "markers": 0.5988932847976685,
+      "answer_prediction_positions": 0.5989188551902771
+    },
+    "outer_beta_by_observed_token_type": {
+      "noise": 0.5832235813140869,
+      "values": 0.5864192843437195,
+      "keys": 0.583171546459198,
+      "markers": 0.5832012295722961,
+      "answer_prediction_positions": 0.583345353603363
+    },
+    "relation_effective_rank_mean": 8.684141079584757,
+    "relation_top_singular_mass_mean": 0.34772976487874985,
+    "count_peak_fraction": [
+      0.1259879171848297,
+      0.15364544093608856,
+      0.15824538469314575,
+      0.10772782564163208
+    ]
+  },
+  "answer_token_accuracy_on_diagnostic_batch": 0.0
+}

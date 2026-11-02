@@ -1,0 +1,406 @@
+{
+  "torch": "2.9.0+cu128",
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "records": [
+    {
+      "variant": "reference",
+      "length": 256,
+      "config": {
+        "heads": 2,
+        "key_dim": 32,
+        "value_dim": 32,
+        "slots": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "positional_mode": "gated",
+        "query_scale": 0.0625,
+        "beta_init": 0.1,
+        "beta_max": 0.9,
+        "decay_init": 0.001,
+        "relation_beta_init": 0.6,
+        "relation_decay_init": 0.0001,
+        "chunk_size": 64,
+        "backend": "fla",
+        "execution": "reference",
+        "read_scale": 1.0
+      },
+      "state_elements": 14464,
+      "output_relative_l2_vs_reference": 0.0,
+      "gradient_relative_l2_vs_reference": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fwd_bwd_seconds": 0.2649098262190819,
+      "tokens_per_second": 966.3665695370869,
+      "peak_allocated_bytes": 25716736,
+      "profile_top_cuda": "-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \n                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  \n-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \n                                            aten::copy_         3.02%      11.337ms         6.78%      25.421ms      14.006us       4.636ms        15.30%       4.640ms       2.556us          1815  \n                                              aten::div         2.97%      11.122ms         4.62%      17.308ms      15.893us       3.251ms        10.73%       3.251ms       2.985us          1089  \n                            ChunkGatedDeltaRuleFunction         9.63%      36.112ms        12.50%      46.881ms     586.011us       2.914ms         9.62%       3.049ms      38.119us            80  \n                                              aten::mul         2.99%      11.215ms         4.66%      17.479ms      15.804us       2.860ms         9.44%       2.860ms       2.586us          1106  \nvoid at::native::elementwise_kernel<128, 2, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us       2.829ms         9.34%       2.829ms       2.947us           960  \n                                              aten::sum         1.97%       7.393ms         2.97%      11.138ms      19.748us       2.681ms         8.85%       2.681ms       4.754us           564  \n                    ChunkGatedDeltaRuleFunctionBackward        13.55%      50.797ms        18.59%      69.715ms     871.435us       2.571ms         8.49%       3.278ms      40.978us            80  \nvoid at::native::unrolled_elementwise_kernel<at::nat...         0.00%       0.000us         0.00%       0.000us       0.000us       2.455ms         8.11%       2.455ms       3.760us           653  \n                                             aten::add_         1.74%       6.510ms         3.20%      12.015ms      12.503us       1.810ms         5.97%       1.810ms       1.883us           961  \n                                              aten::bmm         2.64%       9.905ms         3.53%      13.243ms      31.834us       1.773ms         5.85%       1.773ms       4.262us           416  \n                    merge_16x16_to_64x64_inverse_kernel         0.00%       0.000us         0.00%       0.000us       0.000us       1.552ms         5.13%       1.552ms      19.406us            80  \nvoid at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       1.203ms         3.97%       1.203ms       1.716us           701  \n-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \nSelf CPU time total: 374.965ms\nSelf CUDA time total: 30.289ms\n",
+      "profile_top_cpu": "-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \n                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  \n-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \n                                       cudaLaunchKernel        14.34%      53.778ms        14.34%      53.778ms       6.087us       0.000us         0.00%       0.000us       0.000us          8835  \n                    ChunkGatedDeltaRuleFunctionBackward        13.55%      50.797ms        18.59%      69.715ms     871.435us       2.571ms         8.49%       3.278ms      40.978us            80  \n                            ChunkGatedDeltaRuleFunction         9.63%      36.112ms        12.50%      46.881ms     586.011us       2.914ms         9.62%       3.049ms      38.119us            80  \n                                    aten::empty_strided         4.22%      15.823ms         4.22%      15.823ms       5.257us       0.000us         0.00%       0.000us       0.000us          3010  \n                                            aten::copy_         3.02%      11.337ms         6.78%      25.421ms      14.006us       4.636ms        15.30%       4.640ms       2.556us          1815  \n                                              aten::mul         2.99%      11.215ms         4.66%      17.479ms      15.804us       2.860ms         9.44%       2.860ms       2.586us          1106  \n                                              aten::div         2.97%      11.122ms         4.62%      17.308ms      15.893us       3.251ms        10.73%       3.251ms       2.985us          1089  \n                                              aten::bmm         2.64%       9.905ms         3.53%      13.243ms      31.834us       1.773ms         5.85%       1.773ms       4.262us           416  \n                                       cuLaunchKernelEx         2.01%       7.543ms         2.01%       7.543ms       7.252us       0.000us         0.00%       0.000us       0.000us          1040  \n                                              aten::sum         1.97%       7.393ms         2.97%      11.138ms      19.748us       2.681ms         8.85%       2.681ms       4.754us           564  \n                                            aten::empty         1.96%       7.338ms         1.96%       7.338ms       5.047us       0.000us         0.00%       0.000us       0.000us          1454  \n                                             aten::add_         1.74%       6.510ms         3.20%      12.015ms      12.503us       1.810ms         5.97%       1.810ms       1.883us           961  \n-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \nSelf CPU time total: 374.965ms\nSelf CUDA time total: 30.289ms\n"
+    },
+    {
+      "variant": "packed",
+      "length": 256,
+      "config": {
+        "heads": 2,
+        "key_dim": 32,
+        "value_dim": 32,
+        "slots": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "positional_mode": "gated",
+        "query_scale": 0.0625,
+        "beta_init": 0.1,
+        "beta_max": 0.9,
+        "decay_init": 0.001,
+        "relation_beta_init": 0.6,
+        "relation_decay_init": 0.0001,
+        "chunk_size": 64,
+        "backend": "fla",
+        "execution": "packed",
+        "read_scale": 1.0
+      },
+      "state_elements": 14464,
+      "output_relative_l2_vs_reference": 0.004452424589544535,
+      "gradient_relative_l2_vs_reference": [
+        0.006976707838475704,
+        0.006166013889014721,
+        0.004563973750919104
+      ],
+      "fwd_bwd_seconds": 0.13920889732738337,
+      "tokens_per_second": 1838.9629177074373,
+      "peak_allocated_bytes": 26679296
+    },
+    {
+      "variant": "triton",
+      "length": 256,
+      "config": {
+        "heads": 2,
+        "key_dim": 32,
+        "value_dim": 32,
+        "slots": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "positional_mode": "gated",
+        "query_scale": 0.0625,
+        "beta_init": 0.1,
+        "beta_max": 0.9,
+        "decay_init": 0.001,
+        "relation_beta_init": 0.6,
+        "relation_decay_init": 0.0001,
+        "chunk_size": 64,
+        "backend": "fla",
+        "execution": "triton",
+        "read_scale": 1.0
+      },
+      "state_elements": 14464,
+      "output_relative_l2_vs_reference": 0.004452038556337357,
+      "gradient_relative_l2_vs_reference": [
+        0.00697914557531476,
+        0.006133044604212046,
+        0.004558627959340811
+      ],
+      "fwd_bwd_seconds": 0.11650889677306016,
+      "tokens_per_second": 2197.257094440137,
+      "peak_allocated_bytes": 26130432,
+      "profile_top_cuda": "-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \n                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  \n-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \n                                            aten::copy_         3.69%       5.267ms         8.61%      12.287ms      15.002us       2.204ms        17.44%       2.204ms       2.691us           819  \n                                              aten::bmm         4.47%       6.377ms         5.98%       8.523ms      31.334us       1.323ms        10.47%       1.323ms       4.864us           272  \n                                              aten::mul         3.12%       4.454ms         4.82%       6.880ms      16.303us       1.227ms         9.71%       1.227ms       2.908us           422  \nvoid at::native::unrolled_elementwise_kernel<at::nat...         0.00%       0.000us         0.00%       0.000us       0.000us       1.054ms         8.33%       1.054ms       3.902us           270  \n                                              aten::sum         1.57%       2.240ms         2.38%       3.399ms      20.231us     945.504us         7.48%     945.504us       5.628us           168  \n                                              aten::div         2.13%       3.034ms         3.33%       4.754ms      16.008us     888.277us         7.03%     888.277us       2.991us           297  \nvoid at::native::elementwise_kernel<128, 2, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us     853.749us         6.75%     853.749us       3.049us           280  \n                                             aten::add_         1.72%       2.458ms         3.21%       4.584ms      12.355us     831.138us         6.57%     831.138us       2.240us           371  \nvoid at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us     606.356us         4.80%     606.356us       1.843us           329  \nvoid at::native::elementwise_kernel<128, 4, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us     577.902us         4.57%     577.902us       3.704us           156  \n                                              aten::add         1.57%       2.245ms         2.44%       3.475ms      18.007us     546.886us         4.33%     546.886us       2.834us           193  \n                            ChunkGatedDeltaRuleFunction         4.15%       5.922ms         5.38%       7.678ms     639.853us     473.042us         3.74%     494.706us      41.225us            12  \n-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \nSelf CPU time total: 142.622ms\nSelf CUDA time total: 12.641ms\n",
+      "profile_top_cpu": "-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \n                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  \n-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \n                                       cudaLaunchKernel        15.86%      22.625ms        15.86%      22.625ms       6.241us       0.000us         0.00%       0.000us       0.000us          3625  \n                    ChunkGatedDeltaRuleFunctionBackward         5.50%       7.848ms         7.57%      10.800ms     899.993us     434.030us         3.43%     545.616us      45.468us            12  \n                                              aten::bmm         4.47%       6.377ms         5.98%       8.523ms      31.334us       1.323ms        10.47%       1.323ms       4.864us           272  \n                            ChunkGatedDeltaRuleFunction         4.15%       5.922ms         5.38%       7.678ms     639.853us     473.042us         3.74%     494.706us      41.225us            12  \n                                            aten::copy_         3.69%       5.267ms         8.61%      12.287ms      15.002us       2.204ms        17.44%       2.204ms       2.691us           819  \n                                    aten::empty_strided         3.48%       4.958ms         3.48%       4.958ms       5.442us       0.000us         0.00%       0.000us       0.000us           911  \n                                              aten::mul         3.12%       4.454ms         4.82%       6.880ms      16.303us       1.227ms         9.71%       1.227ms       2.908us           422  \n                                       aten::as_strided         2.25%       3.210ms         2.25%       3.210ms       1.159us       0.000us         0.00%       0.000us       0.000us          2770  \n                                              aten::div         2.13%       3.034ms         3.33%       4.754ms      16.008us     888.277us         7.03%     888.277us       2.991us           297  \n                                          aten::permute         2.08%       2.965ms         2.82%       4.023ms       4.373us       0.000us         0.00%       0.000us       0.000us           920  \n                                         aten::_to_copy         2.03%       2.892ms        11.12%      15.855ms      25.655us       0.000us         0.00%       1.747ms       2.827us           618  \n                                             aten::add_         1.72%       2.458ms         3.21%       4.584ms      12.355us     831.138us         6.57%     831.138us       2.240us           371  \n-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  \nSelf CPU time total: 142.622ms\nSelf CUDA time total: 12.641ms\n"
+    },
+    {
+      "variant": "single_level_equal_primary_state",
+      "length": 256,
+      "config": {
+        "heads": 2,
+        "key_dim": 32,
+        "value_dim": 32,
+        "slots": [
+          64
+        ],
+        "positional_mode": "gated",
+        "query_scale": 0.0625,
+        "beta_init": 0.1,
+        "beta_max": 0.9,
+        "decay_init": 0.001,
+        "relation_beta_init": 0.6,
+        "relation_decay_init": 0.0001,
+        "chunk_size": 64,
+        "backend": "fla",
+        "execution": "packed",
+        "read_scale": 1.0
+      },
+      "state_elements": 8320,
+      "fwd_bwd_seconds": 0.046547157069047294,
+      "tokens_per_second": 5499.798830254096,
+      "peak_allocated_bytes": 20889600
+    },
+    {
+      "variant": "triton_cuda_graph",
+      "length": 256,
+      "config": {
+        "heads": 2,
+        "key_dim": 32,
+        "value_dim": 32,
+        "slots": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "positional_mode": "gated",
+        "query_scale": 0.0625,
+        "beta_init": 0.1,
+        "beta_max": 0.9,
+        "decay_init": 0.001,
+        "relation_beta_init": 0.6,
+        "relation_decay_init": 0.0001,
+        "chunk_size": 64,
+        "backend": "fla",
+        "execution": "triton",
+        "read_scale": 1.0
+      },
+      "state_elements": 14464,
+      "output_relative_l2_vs_reference": 0.004452038556337357,
+      "gradient_relative_l2_vs_reference": [
+        0.00697914557531476,
+        0.006133044604212046,
+        0.004558627959340811
+      ],
+      "fwd_bwd_seconds": 0.010421019668380419,
+      "tokens_per_second": 24565.734270395653,
+      "peak_allocated_bytes": 52122112
+    },
+    {
+      "variant": "single_level_cuda_graph",
+      "length": 256,
+      "config": {
+        "heads": 2,
+        "key_dim": 32,
+        "value_dim": 32,
+        "slots": [
+          64
+        ],
+        "positional_mode": "gated",
+        "query_scale": 0.0625,
+        "beta_init": 0.1,
+        "beta_max": 0.9,
+        "decay_init": 0.001,
+        "relation_beta_init": 0.6,
+        "relation_decay_init": 0.0001,
+        "chunk_size": 64,
+        "backend": "fla",
+        "execution": "packed",
+        "read_scale": 1.0
+      },
+      "state_elements": 8320,
+      "fwd_bwd_seconds": 0.0034931600093841553,
+      "tokens_per_second": 73286.07888338125,
+      "peak_allocated_bytes": 69223936
+    },
+    {
+      "variant": "reference",
+      "length": 1024,
+      "config": {
+        "heads": 2,
+        "key_dim": 32,
+        "value_dim": 32,
+        "slots": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "positional_mode": "gated",
+        "query_scale": 0.0625,
+        "beta_init": 0.1,
+        "beta_max": 0.9,
+        "decay_init": 0.001,
+        "relation_beta_init": 0.6,
+        "relation_decay_init": 0.0001,
+        "chunk_size": 64,
+        "backend": "fla",
+        "execution": "reference",
+        "read_scale": 1.0
+      },
+      "state_elements": 14464,
+      "output_relative_l2_vs_reference": 0.0,
+      "gradient_relative_l2_vs_reference": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fwd_bwd_seconds": 1.2609819291780393,
+      "tokens_per_second": 812.0655628011148,
+      "peak_allocated_bytes": 102500864
+    },
+    {
+      "variant": "packed",
+      "length": 1024,
+      "config": {
+        "heads": 2,
+        "key_dim": 32,
+        "value_dim": 32,
+        "slots": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "positional_mode": "gated",
+        "query_scale": 0.0625,
+        "beta_init": 0.1,
+        "beta_max": 0.9,
+        "decay_init": 0.001,
+        "relation_beta_init": 0.6,
+        "relation_decay_init": 0.0001,
+        "chunk_size": 64,
+        "backend": "fla",
+        "execution": "packed",
+        "read_scale": 1.0
+      },
+      "state_elements": 14464,
+      "output_relative_l2_vs_reference": 0.004015322308987379,
+      "gradient_relative_l2_vs_reference": [
+        0.006891333963721991,
+        0.007063218858093023,
+        0.0048938631080091
+      ],
+      "fwd_bwd_seconds": 0.5513672561695179,
+      "tokens_per_second": 1857.2013273221492,
+      "peak_allocated_bytes": 105339392
+    },
+    {
+      "variant": "triton",
+      "length": 1024,
+      "config": {
+        "heads": 2,
+        "key_dim": 32,
+        "value_dim": 32,
+        "slots": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "positional_mode": "gated",
+        "query_scale": 0.0625,
+        "beta_init": 0.1,
+        "beta_max": 0.9,
+        "decay_init": 0.001,
+        "relation_beta_init": 0.6,
+        "relation_decay_init": 0.0001,
+        "chunk_size": 64,
+        "backend": "fla",
+        "execution": "triton",
+        "read_scale": 1.0
+      },
+      "state_elements": 14464,
+      "output_relative_l2_vs_reference": 0.004015322308987379,
+      "gradient_relative_l2_vs_reference": [
+        0.006891341879963875,
+        0.007058600429445505,
+        0.0048938631080091
+      ],
+      "fwd_bwd_seconds": 0.46097824660440284,
+      "tokens_per_second": 2221.362954852759,
+      "peak_allocated_bytes": 103340544
+    },
+    {
+      "variant": "single_level_equal_primary_state",
+      "length": 1024,
+      "config": {
+        "heads": 2,
+        "key_dim": 32,
+        "value_dim": 32,
+        "slots": [
+          64
+        ],
+        "positional_mode": "gated",
+        "query_scale": 0.0625,
+        "beta_init": 0.1,
+        "beta_max": 0.9,
+        "decay_init": 0.001,
+        "relation_beta_init": 0.6,
+        "relation_decay_init": 0.0001,
+        "chunk_size": 64,
+        "backend": "fla",
+        "execution": "packed",
+        "read_scale": 1.0
+      },
+      "state_elements": 8320,
+      "fwd_bwd_seconds": 0.17927448513607183,
+      "tokens_per_second": 5711.911537343251,
+      "peak_allocated_bytes": 83088384
+    },
+    {
+      "variant": "triton_cuda_graph",
+      "length": 1024,
+      "config": {
+        "heads": 2,
+        "key_dim": 32,
+        "value_dim": 32,
+        "slots": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "positional_mode": "gated",
+        "query_scale": 0.0625,
+        "beta_init": 0.1,
+        "beta_max": 0.9,
+        "decay_init": 0.001,
+        "relation_beta_init": 0.6,
+        "relation_decay_init": 0.0001,
+        "chunk_size": 64,
+        "backend": "fla",
+        "execution": "triton",
+        "read_scale": 1.0
+      },
+      "state_elements": 14464,
+      "output_relative_l2_vs_reference": 0.004015322308987379,
+      "gradient_relative_l2_vs_reference": [
+        0.006891341879963875,
+        0.007058600429445505,
+        0.0048938631080091
+      ],
+      "fwd_bwd_seconds": 0.049797010918458305,
+      "tokens_per_second": 20563.483251570688,
+      "peak_allocated_bytes": 88265216
+    },
+    {
+      "variant": "single_level_cuda_graph",
+      "length": 1024,
+      "config": {
+        "heads": 2,
+        "key_dim": 32,
+        "value_dim": 32,
+        "slots": [
+          64
+        ],
+        "positional_mode": "gated",
+        "query_scale": 0.0625,
+        "beta_init": 0.1,
+        "beta_max": 0.9,
+        "decay_init": 0.001,
+        "relation_beta_init": 0.6,
+        "relation_decay_init": 0.0001,
+        "chunk_size": 64,
+        "backend": "fla",
+        "execution": "packed",
+        "read_scale": 1.0
+      },
+      "state_elements": 8320,
+      "fwd_bwd_seconds": 0.01433716838558515,
+      "tokens_per_second": 71422.7504665111,
+      "peak_allocated_bytes": 105367040
+    }
+  ]
+}

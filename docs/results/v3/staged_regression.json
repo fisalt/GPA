@@ -1,0 +1,201 @@
+{
+  "config": {
+    "width": 128,
+    "heads": 4,
+    "layers": 2,
+    "slots": [
+      32,
+      32
+    ],
+    "chunk_size": 64,
+    "convolution": 8,
+    "attention": "gpa",
+    "execution": "staged",
+    "backend": "fla",
+    "read_scale": 8.0,
+    "beta_init": 0.6,
+    "decay_init": 0.0001,
+    "aligned_query": true,
+    "memory_update": "legacy",
+    "dense_relations": true,
+    "paper_raw": false,
+    "paper_transport": false,
+    "rsa_update": true,
+    "full_controls": false,
+    "slot_decay": false,
+    "orthogonal_centers": true,
+    "strong_relations": false,
+    "paper_product_read": true,
+    "transformer_rope": false,
+    "slot_feature": "linear",
+    "gated_output": false,
+    "balanced_bridge": true,
+    "context_controls": true,
+    "relation_marginal": false,
+    "quadratic_features": true,
+    "contextual_output": false,
+    "temporal_qk_init": true,
+    "key_dim": 0,
+    "learn_read_scale": false
+  },
+  "steps": 20000,
+  "training_metadata": {
+    "seed": 400,
+    "test_seed": 920000,
+    "batch": 8,
+    "max_length": 256,
+    "max_records": 8,
+    "lr": 0.002,
+    "start_step": 0,
+    "target_step": 20000,
+    "easy_curriculum": true,
+    "cuda_graph": true,
+    "cosine": true,
+    "warmup_steps": 100,
+    "min_lr": 0.0002,
+    "curriculum_span": 1000,
+    "loss_balance": "mean_sequence_answer_CE",
+    "data_version": 3,
+    "evaluation_only": true,
+    "samples_per_task": 256,
+    "execution_override": "staged"
+  },
+  "parameters": 493816,
+  "evaluations": {
+    "128": {
+      "records": 4,
+      "tasks": {
+        "single": {
+          "token_accuracy": 1.0,
+          "query_exact_match_teacher_forced": 1.0,
+          "first_answer_accuracy": 1.0,
+          "queries": 256,
+          "sequence_exact_match_teacher_forced": 1.0,
+          "sequences": 256
+        },
+        "uuid4": {
+          "token_accuracy": 0.994140625,
+          "query_exact_match_teacher_forced": 0.9765625,
+          "first_answer_accuracy": 0.9921875,
+          "queries": 256,
+          "sequence_exact_match_teacher_forced": 0.9765625,
+          "sequences": 256,
+          "teacher_forced_accuracy_by_identifier_position": [
+            0.9921875,
+            0.9921875,
+            0.99609375,
+            0.99609375
+          ],
+          "free_generation_exact_match": 0.9765625
+        },
+        "mqar": {
+          "token_accuracy": 1.0,
+          "query_exact_match_teacher_forced": 1.0,
+          "first_answer_accuracy": 1.0,
+          "queries": 768,
+          "sequence_exact_match_teacher_forced": 1.0,
+          "sequences": 256
+        },
+        "overwrite": {
+          "token_accuracy": 1.0,
+          "query_exact_match_teacher_forced": 1.0,
+          "first_answer_accuracy": 1.0,
+          "queries": 256,
+          "sequence_exact_match_teacher_forced": 1.0,
+          "sequences": 256
+        }
+      },
+      "extrapolation": false
+    },
+    "256": {
+      "records": 8,
+      "tasks": {
+        "single": {
+          "token_accuracy": 1.0,
+          "query_exact_match_teacher_forced": 1.0,
+          "first_answer_accuracy": 1.0,
+          "queries": 256,
+          "sequence_exact_match_teacher_forced": 1.0,
+          "sequences": 256
+        },
+        "uuid4": {
+          "token_accuracy": 0.9814453125,
+          "query_exact_match_teacher_forced": 0.93359375,
+          "first_answer_accuracy": 0.984375,
+          "queries": 256,
+          "sequence_exact_match_teacher_forced": 0.93359375,
+          "sequences": 256,
+          "teacher_forced_accuracy_by_identifier_position": [
+            0.984375,
+            0.9765625,
+            0.98828125,
+            0.9765625
+          ],
+          "free_generation_exact_match": 0.93359375
+        },
+        "mqar": {
+          "token_accuracy": 1.0,
+          "query_exact_match_teacher_forced": 1.0,
+          "first_answer_accuracy": 1.0,
+          "queries": 768,
+          "sequence_exact_match_teacher_forced": 1.0,
+          "sequences": 256
+        },
+        "overwrite": {
+          "token_accuracy": 1.0,
+          "query_exact_match_teacher_forced": 1.0,
+          "first_answer_accuracy": 1.0,
+          "queries": 256,
+          "sequence_exact_match_teacher_forced": 1.0,
+          "sequences": 256
+        }
+      },
+      "extrapolation": false
+    },
+    "512": {
+      "records": 12,
+      "tasks": {
+        "single": {
+          "token_accuracy": 1.0,
+          "query_exact_match_teacher_forced": 1.0,
+          "first_answer_accuracy": 1.0,
+          "queries": 256,
+          "sequence_exact_match_teacher_forced": 1.0,
+          "sequences": 256
+        },
+        "uuid4": {
+          "token_accuracy": 0.923828125,
+          "query_exact_match_teacher_forced": 0.7265625,
+          "first_answer_accuracy": 0.9296875,
+          "queries": 256,
+          "sequence_exact_match_teacher_forced": 0.7265625,
+          "sequences": 256,
+          "teacher_forced_accuracy_by_identifier_position": [
+            0.9296875,
+            0.91796875,
+            0.921875,
+            0.92578125
+          ],
+          "free_generation_exact_match": 0.7265625
+        },
+        "mqar": {
+          "token_accuracy": 0.99609375,
+          "query_exact_match_teacher_forced": 0.99609375,
+          "first_answer_accuracy": 0.99609375,
+          "queries": 768,
+          "sequence_exact_match_teacher_forced": 0.98828125,
+          "sequences": 256
+        },
+        "overwrite": {
+          "token_accuracy": 1.0,
+          "query_exact_match_teacher_forced": 1.0,
+          "first_answer_accuracy": 1.0,
+          "queries": 256,
+          "sequence_exact_match_teacher_forced": 1.0,
+          "sequences": 256
+        }
+      },
+      "extrapolation": true
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "config": {
+    "width": 128,
+    "heads": 4,
+    "layers": 2,
+    "slots": [
+      16,
+      16,
+      16,
+      16
+    ],
+    "chunk_size": 64,
+    "convolution": 8,
+    "attention": "gpa",
+    "execution": "triton",
+    "backend": "fla",
+    "read_scale": 8.0,
+    "beta_init": 0.6,
+    "decay_init": 0.0001,
+    "aligned_query": false,
+    "memory_update": "paper_dense",
+    "dense_relations": true,
+    "paper_raw": true
+  },
+  "steps": 6000,
+  "parameters": 412672,
+  "training_metadata": {
+    "seed": 400,
+    "test_seed": 900000,
+    "batch": 8,
+    "max_length": 256,
+    "max_records": 8,
+    "lr": 0.002,
+    "start_step": 0,
+    "target_step": 6000,
+    "easy_curriculum": true,
+    "cuda_graph": true
+  },
+  "evaluations": {
+    "128": {
+      "records": 4,
+      "tasks": {
+        "single": {
+          "token_accuracy": 0.28125,
+          "query_exact_match_teacher_forced": 0.28125,
+          "first_answer_accuracy": 0.28125,
+          "queries": 128
+        },
+        "uuid4": {
+          "token_accuracy": 0.171875,
+          "query_exact_match_teacher_forced": 0.0,
+          "first_answer_accuracy": 0.1640625,
+          "queries": 128,
+          "free_generation_exact_match": 0.0
+        },
+        "mqar": {
+          "token_accuracy": 0.3203125,
+          "query_exact_match_teacher_forced": 0.3203125,
+          "first_answer_accuracy": 0.3203125,
+          "queries": 384
+        },
+        "overwrite": {
+          "token_accuracy": 0.2265625,
+          "query_exact_match_teacher_forced": 0.2265625,
+          "first_answer_accuracy": 0.2265625,
+          "queries": 128
+        }
+      },
+      "extrapolation": false
+    },
+    "256": {
+      "records": 8,
+      "tasks": {
+        "single": {
+          "token_accuracy": 0.203125,
+          "query_exact_match_teacher_forced": 0.203125,
+          "first_answer_accuracy": 0.203125,
+          "queries": 128
+        },
+        "uuid4": {
+          "token_accuracy": 0.140625,
+          "query_exact_match_teacher_forced": 0.0,
+          "first_answer_accuracy": 0.1171875,
+          "queries": 128,
+          "free_generation_exact_match": 0.0
+        },
+        "mqar": {
+          "token_accuracy": 0.2734375,
+          "query_exact_match_teacher_forced": 0.2734375,
+          "first_answer_accuracy": 0.2734375,
+          "queries": 384
+        },
+        "overwrite": {
+          "token_accuracy": 0.2109375,
+          "query_exact_match_teacher_forced": 0.2109375,
+          "first_answer_accuracy": 0.2109375,
+          "queries": 128
+        }
+      },
+      "extrapolation": false
+    },
+    "512": {
+      "records": 12,
+      "tasks": {
+        "single": {
+          "token_accuracy": 0.234375,
+          "query_exact_match_teacher_forced": 0.234375,
+          "first_answer_accuracy": 0.234375,
+          "queries": 128
+        },
+        "uuid4": {
+          "token_accuracy": 0.12890625,
+          "query_exact_match_teacher_forced": 0.0,
+          "first_answer_accuracy": 0.15625,
+          "queries": 128,
+          "free_generation_exact_match": 0.0
+        },
+        "mqar": {
+          "token_accuracy": 0.234375,
+          "query_exact_match_teacher_forced": 0.234375,
+          "first_answer_accuracy": 0.234375,
+          "queries": 384
+        },
+        "overwrite": {
+          "token_accuracy": 0.2265625,
+          "query_exact_match_teacher_forced": 0.2265625,
+          "first_answer_accuracy": 0.2265625,
+          "queries": 128
+        }
+      },
+      "extrapolation": true
+    }
+  }
+}
